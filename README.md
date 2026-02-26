@@ -1,88 +1,114 @@
-# Quawaco Intelligent Operations Center
+# 💧 Quawaco Dashboard - Trung tâm Điều hành Thông minh
 
-Quawaco Intelligent Operations Center is a comprehensive dashboard application designed for water supply management. It provides real-time monitoring, data analytics, and operational insights across multiple departments including Production, Business, Network, HR, and AI Agents.
+Ứng dụng điều hành tổng thể mạng lưới cấp nước được xây dựng với **Next.js 14**, **TypeScript**, **NestJS** và **SQLite**.
 
-## 🚀 Technologies Used
+![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript&logoColor=white) ![NestJS](https://img.shields.io/badge/NestJS-10.0-ea2845?logo=nestjs&logoColor=white) ![SQLite](https://img.shields.io/badge/SQLite-3.0-003B57?logo=sqlite&logoColor=white)
 
-### Frontend
-- **Framework:** Next.js 14 (App Router)
-- **Language:** TypeScript
-- **Styling:** CSS Modules with custom theming (Dark/Light mode)
-- **Charts:** Chart.js with react-chartjs-2
-- **State Management:** React Context API
+---
 
-### Backend
-- **Framework:** NestJS
-- **Language:** TypeScript
-- **Database:** SQLite (better-sqlite3)
-- **ORM:** TypeORM
-- **Authentication:** JWT (JSON Web Tokens)
+## ✨ Tính năng (100% hoàn thành)
 
-## ✨ Key Features
+### ✅ 1. Dashboard (Điều hành đa lĩnh vực)
+- ✅ Tổng quan Sản xuất, Mạng lưới, Kinh doanh, Nhân sự
+- ✅ Biểu đồ trực quan (Doughnut, Bar, Line charts) với Chart.js
+- ✅ Bộ lọc thời gian (Năm 2024 / Năm 2025)
+- ✅ Chỉ số KPI thời gian thực, hiển thị theo VNĐ (x1000)
+- ✅ Giao diện Dark/Light mode hiện đại (Glassmorphism UI)
 
-- **Multi-domain Dashboard:** Dedicated views for General Operations, Production, Network, Business, and HR.
-- **AI Agent Integration:** Chat interface for intelligent assistance and data querying.
-- **Plant Management:** Complete CRUD operations for water treatment plants and pumping stations.
-- **HR Management:** Comprehensive employee directory and management system.
-- **Real-time Metrics:** KPI tracking, charts, and data visualization.
-- **Dark/Light Mode:** Full theming support with glassmorphism UI elements.
-- **Role-based Access:** Secure login system with JWT authentication.
+### ✅ 2. Plant Management (Quản lý Nhà máy)
+- ✅ Hiển thị danh sách nhà máy cấp nước với grid layout
+- ✅ Thống kê công suất, chi phí vận hành (VNĐ) và doanh thu
+- ✅ ProgressBar hiển thị tỷ lệ sử dụng công suất
+- ✅ Thêm / Sửa / Xóa thông tin nhà máy
+- ✅ Modals mờ (blur background) hiển thị thông tin chi tiết
+- ✅ UI responsive cho mobile và desktop
 
-## 📦 Project Structure
+### ✅ 3. HR Management (Quản lý Nhân sự)
+- ✅ Danh sách hồ sơ nhân viên toàn công ty
+- ✅ Thống kê số lượng nhân sự (Đang làm việc / Đã nghỉ)
+- ✅ Hiển thị mức lương cơ bản (VNĐ), bộ phận, chức vụ
+- ✅ Thêm / Sửa / Xóa hồ sơ nhân sự
+- ✅ Delete confirmation modal an toàn
 
-```
+### ✅ 4. AI Agent (Nhân viên số)
+- ✅ Tích hợp khung chat tương tác với trợ lý ảo bằng AI
+- ✅ Giải đáp thông tin điều hành tự động
+
+---
+
+## 🛠 Tech Stack
+
+| Category | Technology |
+| :--- | :--- |
+| **Frontend Framework** | Next.js 14 (App Router) |
+| **Backend Framework** | NestJS 10.0 |
+| **Language** | TypeScript |
+| **Styling** | CSS Modules + Custom CSS Variables |
+| **UI Library** | React 18, Chart.js (react-chartjs-2) |
+| **Database** | SQLite (better-sqlite3) |
+| **ORM** | TypeORM |
+| **Authentication** | JWT (JSON Web Tokens) |
+| **Icons & Fonts** | Google Fonts (Inter) |
+
+---
+
+## 📁 Project Structure
+
+```text
 webappQuawaco/
-├── frontend/          # Next.js application
+├── frontend/               # Next.js App
 │   ├── src/
-│   │   ├── app/       # Next.js App Router pages
-│   │   ├── components/# Reusable UI components
-│   │   ├── context/   # React Context providers (Theme, Auth)
-│   │   └── lib/       # Utility functions and API client
-│   └── public/        # Static assets
-└── backend/           # NestJS API server
+│   │   ├── app/            # App Router (dashboard, login, plants, hr)
+│   │   ├── components/     # UI Components (Sidebar, Charts, AI Chat)
+│   │   ├── context/        # ThemeContext, AuthContext
+│   │   ├── lib/            # api.ts (Fetch wrappers)
+│   │   └── globals.css     # CSS Variables (Dark/Light themes)
+│   └── package.json
+│
+└── backend/                # NestJS API
     ├── src/
-    │   ├── auth/      # JWT Authentication module
-    │   ├── dashboard/ # Data aggregation service
-    │   ├── plant/     # Plant management CRUD
-    │   ├── hr/        # HR management CRUD
-    │   └── seed/      # Database seeding utilities
-    └── test/          # E2E tests
+    │   ├── auth/           # JWT Auth Logic
+    │   ├── dashboard/      # Mock data stream services
+    │   ├── hr/             # HR CRUD controllers/services
+    │   └── plant/          # Plant CRUD controllers/services
+    └── package.json
 ```
 
-## 🛠️ Getting Started
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js (v18 or newer recommended)
-- npm or yarn
+- Node.js 18+
+- npm hoặc yarn
 
-### 1. Setup Backend
+### Installation
+
+**1. Clone repository:**
+```bash
+git clone <repository-url>
+cd webappQuawaco
+```
+
+**2. Cài đặt và chạy Backend:**
 ```bash
 cd backend
 npm install
-# Start the development server
 npm run start:dev
 ```
-The backend API will run on `http://localhost:3001`
+*API sẽ chạy ở `http://localhost:3001/api`*
 
-### 2. Setup Frontend
+**3. Cài đặt và chạy Frontend:**
 ```bash
+# Mở một terminal mới
 cd frontend
 npm install
-# Start the Next.js development server
 npm run dev
 ```
-The frontend application will run on `http://localhost:3000`
 
-### 3. Login
-- **Username:** admin
-- **Password:** admin
+**4. Mở browser:**
+```bash
+http://localhost:3000
+```
 
-## 🤝 Contributing
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-This project is proprietary and confidential.
+> 💡 **Note:** Quá trình đăng nhập sử dụng tài khoản/mật khẩu mặc định là `admin` / `admin`. Dữ liệu nhà máy và nhân sự mẫu (sample data) sẽ tự động có sẵn từ Backend khi khởi động. 
