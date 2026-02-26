@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Outer circle -->
+  <circle cx="100" cy="100" r="90" stroke="#1a3a5c" stroke-width="6" fill="none"/>
+  <!-- Inner light blue circle background -->
+  <circle cx="100" cy="100" r="84" fill="#7ec8e3" opacity="0.3"/>
+  <!-- Wave at bottom -->
+  <path d="M16 130 Q50 110, 100 130 Q150 150, 184 120 L184 160 Q150 180, 100 160 Q50 140, 16 165 Z" fill="#1a3a5c" opacity="0.8"/>
+  <!-- Water droplet -->
+  <path d="M100 35 C100 35, 65 85, 65 110 C65 130, 80 148, 100 148 C120 148, 135 130, 135 110 C135 85, 100 35, 100 35Z" fill="#5ab0d5" stroke="#1a3a5c" stroke-width="2"/>
+  <!-- Droplet highlight -->
+  <ellipse cx="88" cy="100" rx="10" ry="18" fill="#8fd4ee" opacity="0.5"/>
+  <!-- Checkmark above -->
+  <path d="M78 72 L95 88 L125 52" stroke="#1a3a5c" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

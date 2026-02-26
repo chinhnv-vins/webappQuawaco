@@ -1,0 +1,204 @@
+.generalPage {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 40px 20px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.title h1 {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
+
+.title p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    letter-spacing: 2px;
+}
+
+.modulesCircle {
+    position: relative;
+    width: 500px;
+    height: 500px;
+}
+
+.centerOrb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.3), rgba(6, 182, 212, 0.1), transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.centerOrb::before {
+    content: '💧';
+    font-size: 60px;
+    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.5));
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 40px rgba(59, 130, 246, 0.2);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+        box-shadow: 0 0 60px rgba(59, 130, 246, 0.3);
+    }
+}
+
+.moduleItem {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.moduleItem:hover {
+    transform: scale(1.1);
+}
+
+.moduleIcon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    border: 2px solid var(--accent-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s;
+}
+
+.moduleItem:hover .moduleIcon {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.3);
+}
+
+.moduleName {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-align: center;
+    max-width: 120px;
+    line-height: 1.3;
+}
+
+.moduleItem:hover .moduleName {
+    color: var(--text-primary);
+}
+
+.quawacoBrand {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quawacoBrand img {
+    width: 50px;
+    height: 50px;
+}
+
+.brandText {
+    font-size: 10px;
+    color: var(--text-muted);
+}
+
+/* Module positions on circle */
+.pos0 {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.pos1 {
+    top: 12%;
+    right: 0;
+}
+
+.pos2 {
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+}
+
+.pos3 {
+    bottom: 12%;
+    right: 0;
+}
+
+.pos4 {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.pos5 {
+    bottom: 12%;
+    left: 0;
+}
+
+.pos6 {
+    top: 50%;
+    left: -20px;
+    transform: translateY(-50%);
+}
+
+.pos7 {
+    top: 12%;
+    left: 0;
+}
+
+@media (max-width: 768px) {
+    .modulesCircle {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .moduleItem {
+        position: static !important;
+        transform: none !important;
+    }
+
+    .centerOrb {
+        display: none;
+    }
+
+    .title h1 {
+        font-size: 18px;
+    }
+}
